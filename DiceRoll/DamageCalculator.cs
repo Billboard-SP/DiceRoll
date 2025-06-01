@@ -35,6 +35,11 @@ namespace DiceRoll
                 damageByType = new Dictionary<string, int>();
                 lastTotalDamage = 0;
             }
+
+            public void AddMiscDamage(int count, int sides, string type)
+            {
+                miscSources.Add((count, sides, type));
+            }
         }
     }
 }
