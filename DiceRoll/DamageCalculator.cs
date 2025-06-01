@@ -47,6 +47,14 @@ namespace DiceRoll
                 damageByType.Clear();
                 int total = 0;
 
+                // roll base damage
+                int baseTotal = 0;
+                for (int i = 0; i < diceCount; i++)
+                    baseTotal += rnd.Next(1, diceSides + 1);
+                baseTotal += modifier;
+                damageByType[damageType] = baseTotal;
+                total += baseTotal;
+
 
             }
         }
