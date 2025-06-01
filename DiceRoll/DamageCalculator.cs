@@ -10,6 +10,14 @@ namespace DiceRoll
     {
         public class DamageRoll
         {
+            // Base damage (from the weapon itself)
+            private int diceCount;
+            private int diceSides;
+            private int modifier;
+            private string damageType;
+
+            // Misc sources (from boons, smites, or any extra sources)
+            private List<(int count, int sides, string type)> miscSources;
 
         }
     }
