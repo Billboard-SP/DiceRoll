@@ -55,7 +55,22 @@ namespace DiceRoll
                 damageByType[damageType] = baseTotal;
                 total += baseTotal;
 
+                // misc sources
+                foreach (var (count, sides, type) in miscSources)
+                {
+                    int miscTotal = 0;
+                    for (int i = 0; i < count; i++)
+                        miscTotal += rnd.Next(1, sides + 1);
+                    if (damageByType.ContainsKey(type))
+                        damageByType[type] += miscTotal;
+                    else
+                        damageByType[type] = miscTotal;
 
+                    total += miscTotal;
+                }
+
+                lastTotalDamage += total;
+                return total;
             }
         }
     }
