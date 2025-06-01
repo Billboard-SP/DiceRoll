@@ -19,6 +19,10 @@ namespace DiceRoll
             // Misc sources (from boons, smites, or any extra sources)
             private List<(int count, int sides, string type)> miscSources;
 
+            // Damage breakdown (the total damage seperated)
+            private Dictionary<string, int> damageByType;
+
+
         }
     }
 }
