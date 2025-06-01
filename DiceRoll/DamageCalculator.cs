@@ -22,7 +22,7 @@ namespace DiceRoll
             // Damage breakdown (the total damage seperated)
             private Dictionary<string, int> damageByType;
 
-
+            private int lastTotalDamage;
         }
     }
 }
