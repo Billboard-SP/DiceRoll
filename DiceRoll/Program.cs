@@ -43,8 +43,18 @@ namespace DiceRoll
 
                         roll.AddMiscDamage(miscCount, miscSides, miscType);
                     }
-                }
-            }
+
+                }while (addMore == "y" || addMore == "yes");
+
+                roll.RollDamage();
+                Console.WriteLine(roll.GetRollSummary());
+
+                Console.WriteLine("Roll again? (y/n): ");
+                input = Console.ReadLine().ToLower();
+
+            }while (input == "y" || input == "yes");
+
+            Console.WriteLine("Ended");
         }
     }
 }
