@@ -72,6 +72,19 @@ namespace DiceRoll
                 lastTotalDamage += total;
                 return total;
             }
+
+            public int GetLastTotalDamage() => lastTotalDamage;
+
+            public string GetRollSummary()
+            {
+                string summary = "Damage Breakdown: \n";
+                foreach (var kvp in damageByType)
+                {
+                    summary += $"- {kvp.Key}: {kvp.Value}\n";
+                }
+                summary += $"Total Damage: {lastTotalDamage}";
+                return summary;
+            }
         }
     }
 }
