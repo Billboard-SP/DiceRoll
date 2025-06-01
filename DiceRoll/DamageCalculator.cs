@@ -40,6 +40,15 @@ namespace DiceRoll
             {
                 miscSources.Add((count, sides, type));
             }
+
+            public int RollDamage()
+            {
+                Random rnd = new Random();
+                damageByType.Clear();
+                int total = 0;
+
+
+            }
         }
     }
 }
